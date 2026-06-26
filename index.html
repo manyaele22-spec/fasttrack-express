@@ -1,80 +1,152 @@
-
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FastTrack Express</title>
 
 <style>
 
-body{
+*{
 
 margin:0;
-font-family:Arial;
 
-background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05');
+padding:0;
 
-background-size:cover;
-background-position:center;
+box-sizing:border-box;
 
-height:100vh;
+font-family:Arial,Helvetica,sans-serif;
 
 }
 
+body{
+
+background:url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600")
+
+center center/cover no-repeat fixed;
+
+min-height:100vh;
+
+}
+
+nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:25px 70px;
+
+background:rgba(0,0,70,.75);
+
+}
+
+.logo{
+
+font-size:38px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+.logo span{
+
+color:gold;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:40px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+font-size:22px;
+
+color:white;
+
+}
 
 .container{
 
-width:80%;
-margin:auto;
+width:90%;
 
-margin-top:120px;
+max-width:900px;
+
+margin:80px auto;
+
+padding:50px;
 
 text-align:center;
 
-background:rgba(255,255,255,0.85);
+background:rgba(255,255,255,.15);
 
-padding:40px;
+backdrop-filter:blur(15px);
 
-border-radius:20px;
+border-radius:25px;
+
+color:white;
 
 }
-
 
 h1{
 
-font-size:60px;
+font-size:65px;
 
-color:navy;
+margin-bottom:15px;
 
 }
-
 
 p{
 
-font-size:30px;
+font-size:28px;
+
+margin-bottom:35px;
 
 }
-
 
 input{
 
-width:400px;
+width:100%;
 
-padding:20px;
+padding:22px;
 
-font-size:25px;
+font-size:24px;
 
-border-radius:10px;
+border:none;
+
+border-radius:12px;
+
+outline:none;
 
 }
 
-
 button{
 
-padding:20px 40px;
+margin-top:25px;
 
-font-size:25px;
+padding:18px 45px;
 
-background:green;
+font-size:24px;
+
+background:#00b300;
 
 color:white;
 
@@ -86,16 +158,39 @@ cursor:pointer;
 
 }
 
+button:hover{
 
-.result{
+background:#008000;
 
-margin-top:30px;
+}
 
-font-size:35px;
+#result{
 
-color:green;
+margin-top:40px;
+
+font-size:30px;
 
 font-weight:bold;
+
+}
+
+footer{
+
+position:fixed;
+
+bottom:0;
+
+width:100%;
+
+padding:20px;
+
+text-align:center;
+
+background:rgba(0,0,70,.85);
+
+color:white;
+
+font-size:20px;
 
 }
 
@@ -105,42 +200,91 @@ font-weight:bold;
 
 <body>
 
-<div class="container">
+<nav>
 
-<h1>FASTTRACK EXPRESS</h1>
+<div class="logo">
 
-<p>Enter Tracking Number</p>
-
-<input id="track" placeholder="FT123456789">
-
-<br><br>
-
-<button onclick="trackParcel()">Track</button>
-
-<div class="result" id="status"></div>
+FASTTRACK <span>EXPRESS</span>
 
 </div>
 
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Track</a></li>
+
+<li><a href="#">Services</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Track Your Shipment</h1>
+
+<p>Worldwide Shipping Services</p>
+
+<input id="track" placeholder="Enter Tracking Number">
+
+<br>
+
+<button onclick="trackPackage()">
+
+Track Package
+
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<footer>
+
+☎ +1 800 555 1234
+
+</footer>
 
 <script>
 
-function trackParcel(){
+function trackPackage(){
 
-let num=document.getElementById("track").value;
+let number=document.getElementById("track").value;
 
-if(num=="FT123456789"){
+let result=document.getElementById("result");
 
-document.getElementById("status").innerHTML=
+if(number=="FT123456789"){
 
-"✅ Just Arrived <br><br>Recipient: Jintana Jintana<br>Bangkok, Thailand";
+result.innerHTML=`
+
+✅ DELIVERED
+
+<br><br>
+
+Recipient : Jintana Jintana
+
+<br>
+
+Location : Bangkok, Thailand
+
+<br>
+
+Delivered on : 26 June 2026
+
+`;
+
+result.style.color="lime";
 
 }
 
 else{
 
-document.getElementById("status").innerHTML=
+result.innerHTML="❌ Tracking Number Not Found";
 
-"❌ Tracking Number Not Found";
+result.style.color="red";
 
 }
 
@@ -149,4 +293,5 @@ document.getElementById("status").innerHTML=
 </script>
 
 </body>
+
 </html>
