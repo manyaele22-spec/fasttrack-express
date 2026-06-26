@@ -2,10 +2,80 @@
 <html>
 <head>
 <title>FastTrack Express</title>
+<style>
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+    text-align:center;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+input{
+    padding:10px;
+    width:250px;
+}
+
+button{
+    padding:10px 20px;
+    background:green;
+    color:white;
+    border:none;
+}
+
+.result{
+    margin-top:20px;
+    font-size:20px;
+    color:green;
+}
+</style>
 </head>
+
 <body>
 
+<div class="container">
+
 <h1>FASTTRACK EXPRESS</h1>
+
+<p>Enter Tracking Number</p>
+
+<input id="track" placeholder="FT123456789">
+
+<button onclick="trackParcel()">Track</button>
+
+<div class="result" id="status"></div>
+
+</div>
+
+<script>
+
+function trackParcel(){
+
+let num=document.getElementById("track").value;
+
+if(num==="FT123456789"){
+
+document.getElementById("status").innerHTML=
+"✅ Delivered<br><br>Recipient: Jintana Jintana<br>Bangkok, Thailand";
+
+}
+
+else{
+
+document.getElementById("status").innerHTML=
+"❌ Tracking number not found";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
