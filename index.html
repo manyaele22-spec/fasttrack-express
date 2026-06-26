@@ -2,39 +2,104 @@
 <html>
 <head>
 <title>FastTrack Express</title>
+
 <style>
+
 body{
-    font-family:Arial;
-    background:#f2f2f2;
-    text-align:center;
+
+margin:0;
+font-family:Arial;
+
+background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05');
+
+background-size:cover;
+background-position:center;
+
+height:100vh;
+
 }
+
 
 .container{
-    width:80%;
-    margin:auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
+
+width:80%;
+margin:auto;
+
+margin-top:120px;
+
+text-align:center;
+
+background:rgba(255,255,255,0.85);
+
+padding:40px;
+
+border-radius:20px;
+
 }
+
+
+h1{
+
+font-size:60px;
+
+color:navy;
+
+}
+
+
+p{
+
+font-size:30px;
+
+}
+
 
 input{
-    padding:10px;
-    width:250px;
+
+width:400px;
+
+padding:20px;
+
+font-size:25px;
+
+border-radius:10px;
+
 }
+
 
 button{
-    padding:10px 20px;
-    background:green;
-    color:white;
-    border:none;
+
+padding:20px 40px;
+
+font-size:25px;
+
+background:green;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
 }
 
+
 .result{
-    margin-top:20px;
-    font-size:20px;
-    color:green;
+
+margin-top:30px;
+
+font-size:35px;
+
+color:green;
+
+font-weight:bold;
+
 }
+
 </style>
+
 </head>
 
 <body>
@@ -47,11 +112,14 @@ button{
 
 <input id="track" placeholder="FT123456789">
 
+<br><br>
+
 <button onclick="trackParcel()">Track</button>
 
 <div class="result" id="status"></div>
 
 </div>
+
 
 <script>
 
@@ -59,17 +127,19 @@ function trackParcel(){
 
 let num=document.getElementById("track").value;
 
-if(num==="FT123456789"){
+if(num=="FT123456789"){
 
 document.getElementById("status").innerHTML=
-"✅ Delivered<br><br>Recipient: Jintana Jintana<br>Bangkok, Thailand";
+
+"✅ DELIVERED<br><br>Recipient: Jintana Jintana<br>Bangkok, Thailand";
 
 }
 
 else{
 
 document.getElementById("status").innerHTML=
-"❌ Tracking number not found";
+
+"❌ Tracking Number Not Found";
 
 }
 
