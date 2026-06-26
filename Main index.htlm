@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+<title>FASTTRACK EXPRESS</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f2f4f8;
+}
+
+header{
+background:#0047AB;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+header h1{
+font-size:55px;
+margin:0;
+}
+
+header p{
+font-size:30px;
+}
+
+nav{
+background:#0056d6;
+padding:20px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:25px;
+margin:20px;
+}
+
+.container{
+width:90%;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-top:30px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+input{
+width:80%;
+padding:18px;
+font-size:24px;
+border-radius:8px;
+border:1px solid gray;
+}
+
+button{
+margin-top:20px;
+padding:15px 35px;
+font-size:22px;
+background:#0047AB;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#002f70;
+}
+
+#result{
+margin-top:25px;
+font-size:30px;
+color:green;
+}
+
+.services{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+}
+
+.box{
+background:white;
+padding:20px;
+margin:10px;
+width:250px;
+border-radius:10px;
+box-shadow:0 0 10px silver;
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+}
+
+.stat{
+font-size:35px;
+font-weight:bold;
+color:#0047AB;
+}
+
+footer{
+margin-top:40px;
+background:#0047AB;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>FASTTRACK EXPRESS</h1>
+
+<p>Worldwide Shipping Services</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">Track</a>
+
+<a href="#">Services</a>
+
+<a href="#">Contact</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Track Your Shipment</h2>
+
+<input id="track" placeholder="Enter Tracking Number">
+
+<br>
+
+<button onclick="check()">Track Package</button>
+
+<div id="result"></div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Shipment History</h2>
+
+<p>26 Jun 2026 — New York — Package Received</p>
+
+<p>27 Jun 2026 — London — In Transit</p>
+
+<p>28 Jun 2026 — Bangkok — Customs Cleared</p>
+
+<p>29 Jun 2026 — Bangkok — Out for Delivery</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="box">
+
+<h3>✈ Air Freight</h3>
+
+</div>
+
+<div class="box">
+
+<h3>🚢 Sea Freight</h3>
+
+</div>
+
+<div class="box">
+
+<h3>🚚 Ground Delivery</h3>
+
+</div>
+
+<div class="box">
+
+<h3>📦 Door To Door</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Company Statistics</h2>
+
+<div class="stats">
+
+<div>
+
+<div class="stat">250,000+</div>
+
+Packages Delivered
+
+</div>
+
+
+<div>
+
+<div class="stat">120+</div>
+
+Countries Covered
+
+</div>
+
+
+<div>
+
+<div class="stat">98%</div>
+
+Satisfied Customers
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Customer Reviews</h2>
+
+<p>⭐⭐⭐⭐⭐</p>
+
+<p>Excellent delivery service.</p>
+
+<br>
+
+<p>⭐⭐⭐⭐⭐</p>
+
+<p>Package arrived safely and on time.</p>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+<h2>Contact Us</h2>
+
+<p>Phone : +1 800 555 1234</p>
+
+<p>Email : support@fasttrackexpress.com</p>
+
+<p>Address : 123 Shipping Avenue, New York</p>
+
+</footer>
+
+
+
+<script>
+
+function check(){
+
+let code=document.getElementById("track").value;
+
+if(code=="FT123456789"){
+
+document.getElementById("result").innerHTML=
+
+"📦 Delivered<br><br>Delivered Successfully<br>29 June 2026";
+
+}
+
+else{
+
+document.getElementById("result").innerHTML=
+
+"❌ Tracking number not found";
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+</html>
